@@ -3,6 +3,7 @@ import Banner from './Banner';
 import AllStories from './AllStories';
 import LifeStyleTranding from './LifeStyleTranding';
 import PopularTag from './PopularTag';
+import NewsLetter from './NewsLetter';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <LifeStyleTranding></LifeStyleTranding>
             <PopularTag></PopularTag>
             </div>
+            <NewsLetter></NewsLetter>
         </div>
     );
 };
