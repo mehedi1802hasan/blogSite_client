@@ -16,7 +16,7 @@ const Banner = () => {
     const [banner,setBanner]=useState([]);
     // const{image,value,name,date,time,writerName,description}=item;
     useEffect(()=>{
-        fetch('banner.json')
+        fetch('http://localhost:2000/banner')
         .then(res=>res.json())
         .then(data=>setBanner(data))
     },[]);

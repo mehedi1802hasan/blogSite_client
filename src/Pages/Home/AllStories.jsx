@@ -7,7 +7,7 @@ const AllStories = () => {
     const [showAllItems, setShowAllItems] = useState(false);
 
     useEffect(() => {
-        fetch('allstory.json')
+        fetch('http://localhost:2000/story')
             .then(res => res.json())
             .then(data => setAllstory(data))
     }, []);
@@ -28,7 +28,7 @@ const AllStories = () => {
                             <h4><CalendarMonthIcon/>{item.date}</h4>
                         </div>
                         <h4 className='text-2xl font-serif font-bold my-3 '>{item.name}</h4>
-                        <h4>{item.description}</h4>
+                        <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
                     </div>
                 ))}
             </div>
