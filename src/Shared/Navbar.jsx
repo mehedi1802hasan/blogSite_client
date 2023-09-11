@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,9 +6,17 @@ import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import MenuIcon from '@mui/icons-material/Menu';
+import { AuthContext } from '../Pages/LoginRegistration/Provider';
 const Navbar = () => {
     const [anchorEl, setAnchorEl] = useState(null);
-
+    const { loading, user, signUpUser,  singInUser,  logOut}=useContext(AuthContext)
+     const handleLogout=()=>{
+        logOut()
+        .then(()=>{})
+        .catch(error=>{
+            console.log(error.message)
+        })
+     }      
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -35,8 +43,16 @@ const Navbar = () => {
                            <Link to='/'>Authors</Link>
                          
                         </div>
-                        <Button color="inherit">Login</Button>
-                    </Toolbar>
+                   
+                   <div>
+                    {
+                        user?  <Link to="/" onClick={handleLogout}> <Button color="inherit">Logout</Button></Link>:
+                        <Link to="/login"> <Button color="inherit">Login</Button></Link>
+                    }
+                   
+                       {/* <Link to="/registration"> <Button color="inherit">Registration</Button></Link> */}
+                   </div>
+                   </Toolbar>
                 </AppBar>
             </Box>
 
