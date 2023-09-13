@@ -16,7 +16,7 @@ const Banner = () => {
     const [banner,setBanner]=useState([]);
     // const{image,value,name,date,time,writerName,description}=item;
     useEffect(()=>{
-        fetch('http://localhost:2000/banner')
+        fetch('https://blog-site-server-6tp8d2x43-mehedi1802hasan.vercel.app/banner')
         .then(res=>res.json())
         .then(data=>setBanner(data))
     },[]);
@@ -42,7 +42,7 @@ const Banner = () => {
           
           {
               banner.map(item=>   <SwiperSlide key={item.value}><div key={item.image} className='md:flex gap-16 justify-between '>
-           <div className='md:w-1/2'>
+           <div className=''>
            <img className='rounded-3xl mb-9 ' src={item.image} alt="" />
            </div>
         

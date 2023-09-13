@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LifeStyleTranding = () => {
     const [allstory,setAllstory]=useState([]);
     useEffect(()=>{
-        fetch('allstory.json')
+        fetch('https://blog-site-server-6tp8d2x43-mehedi1802hasan.vercel.app/story')
         .then(res=>res.json())
         .then(data=>setAllstory(data))
     },[]);
@@ -34,7 +35,8 @@ const LifeStyleTranding = () => {
                     trendingStories.slice(0,3).map(item=>    <div key={item.image} className='flex gap-10 justify-center items-center'>
                     <div><img className='h-52 w-96 rounded-lg' src={item.image}alt="" /></div>
                     <div> 
-                   <h4 className='text-2xl font-bold w-96 my-4'>{item.name}</h4>      
+                    <Link to={`/story/${item._id}`}>
+                   <h4 className='text-2xl font-bold w-96 my-4'>{item.name}</h4>  </Link>    
                    <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
 
                    </div>

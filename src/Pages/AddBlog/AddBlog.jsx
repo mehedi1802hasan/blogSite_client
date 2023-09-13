@@ -35,7 +35,7 @@ const AddBlog = () => {
     };
     console.log(addstory);
 
-    fetch('http://localhost:2000/story', {
+    fetch('https://blog-site-server-6tp8d2x43-mehedi1802hasan.vercel.app/story', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

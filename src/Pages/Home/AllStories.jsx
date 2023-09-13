@@ -8,7 +8,7 @@ const AllStories = () => {
     const [showAllItems, setShowAllItems] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:2000/story')
+        fetch('https://blog-site-server-6tp8d2x43-mehedi1802hasan.vercel.app/story')
             .then(res => res.json())
             .then(data => setAllstory(data))
     }, []);
