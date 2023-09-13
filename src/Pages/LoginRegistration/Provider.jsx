@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWith
 
 export const AuthContext =createContext(null);
 
-const Provider = ({children}) => {
+const Providerr = ({children}) => {
     const auth = getAuth(app);
     const [user,setUser]=useState('');
     const [loading, setLoading]=useState(true);
@@ -48,4 +48,4 @@ const Provider = ({children}) => {
     );
 };
 
-export default Provider;
+export default Providerr;

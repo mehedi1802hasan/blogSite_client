@@ -14,9 +14,14 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from '../../Shared/Navbar';
 import { AuthContext } from './Provider';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const Login = () => {
-  const { singInUser}=useContext(AuthContext)
+  const { singInUser}=useContext(AuthContext);
+  const location=useLocation();
+  const navigate =useNavigate();
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,9 +33,23 @@ const Login = () => {
    .then(result=>{
     const singIned=result.user;
     console.log(singIned);
+    navigate(from, { replace: true });
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'successfully login ',
+      showConfirmButton: false,
+      timer: 1500
+    })
    })
    .catch(error=>{
     console.log(error.message)
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+     
+    })
    })
        
   };

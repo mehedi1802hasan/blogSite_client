@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { Link } from 'react-router-dom';
 
 const AllStories = () => {
     const [allstory, setAllstory] = useState([]);
@@ -22,14 +23,17 @@ const AllStories = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 border-0'>
                 {displayedItems.map(item => (
                     <div key={item.image}>
-                        <img className='h-64 w-full rounded-2xl hover:scale-105' src={item.image} alt="" />
+                      <Link to={`/story/${item._id}`}>  <img className='h-64 w-full rounded-2xl hover:scale-105 duration-700' src={item.image} alt="" /></Link>
                         <div className='flex justify-between items-center my-6  '>
                             <h3 className='text-yellow-500 font-bold'>{item.value}</h3>
                             <h4><CalendarMonthIcon/>{item.date}</h4>
                         </div>
                         <h4 className='text-2xl font-serif font-bold my-3 '>{item.name}</h4>
-                        <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
-                    </div>
+
+
+                        
+  <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
+   </div>
                 ))}
             </div>
 

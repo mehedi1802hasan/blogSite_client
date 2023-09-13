@@ -40,7 +40,7 @@ const Navbar = () => {
                         <div className="hidden md:flex justify-center items-center gap-4">
                            <Link to='/'>Home</Link>
                            <Link to='/'>Feature</Link>
-                           <Link to='/'>Authors</Link>
+                           <Link to='/addblog'>Add Blog</Link>
                          
                         </div>
                    
@@ -73,7 +73,7 @@ const Navbar = () => {
               <div className="p-4 flex flex-col">
     <Link to='/'>Home</Link>
     <Link to='/'>Feature</Link>
-    <Link to='/'>Authors</Link>
+    <Link to='/addblog'>Add Blog</Link>
 </div>
 
             </Popover>

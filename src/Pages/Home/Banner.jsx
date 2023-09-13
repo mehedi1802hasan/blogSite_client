@@ -41,7 +41,7 @@ const Banner = () => {
        <div>
           
           {
-              banner.map(item=>   <SwiperSlide key={item.value}><div className='md:flex gap-16 justify-between '>
+              banner.map(item=>   <SwiperSlide key={item.value}><div key={item.image} className='md:flex gap-16 justify-between '>
            <div className='md:w-1/2'>
            <img className='rounded-3xl mb-9 ' src={item.image} alt="" />
            </div>

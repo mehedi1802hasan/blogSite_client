@@ -16,8 +16,8 @@ const LifeStyleTranding = () => {
                 <h3 className='text-3xl font-bold mb-7'>#LifeStyle</h3>
             <div className='space-y-12'>
                 {
-                    lifeStyleStories.slice(0,3).map(item=>    <div className='flex gap-10 justify-center items-center'>
-                    <div><img className='h-52 w-96 rounded-lg' src={item.image}alt="" /></div>
+                    lifeStyleStories.slice(0,3).map(item=>    <div key={item.image} className='flex gap-10 justify-center items-center'>
+                    <div className='h-52 w-96 rounded-lg'><img className='h-full w-full' src={item.image}alt="" /></div>
                     <div> 
                    <h4 className='text-2xl font-bold w-96 my-4'>{item.name}</h4>      
                    <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
@@ -31,7 +31,7 @@ const LifeStyleTranding = () => {
             <h3 className='text-3xl font-bold mb-7'>#Tranding</h3>
             <div className='space-y-12'>
                 {
-                    trendingStories.slice(0,3).map(item=>    <div className='flex gap-10 justify-center items-center'>
+                    trendingStories.slice(0,3).map(item=>    <div key={item.image} className='flex gap-10 justify-center items-center'>
                     <div><img className='h-52 w-96 rounded-lg' src={item.image}alt="" /></div>
                     <div> 
                    <h4 className='text-2xl font-bold w-96 my-4'>{item.name}</h4>      
