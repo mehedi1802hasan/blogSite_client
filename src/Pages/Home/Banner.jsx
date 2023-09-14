@@ -29,7 +29,7 @@ const Banner = () => {
       };
     return (
         <div className='bg-slate-50 p-9'>
-            <h4 className=' md:mb-4'>Featured Storeis</h4>
+            <h4 className=' md:mb-4 text-yellow-500'>Featured Storeis</h4>
             <>
       <Swiper
         pagination={pagination}

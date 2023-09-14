@@ -35,11 +35,10 @@ const Navbar = () => {
                     <Toolbar className='flex justify-between items-center'>
                         <div className='flex justify-center items-center gap-3'>
                             <h3 className='md:hidden lg:hidden' onClick={handleClick}><MenuIcon /></h3>
-                            <h3 className='text-2xl font-serif font-bold'>BlogXYZ</h3>
+                           <h3 className='text-2xl font-serif font-bold'><Link to='/'>BlogLife</Link></h3>
                         </div>
                         <div className="hidden md:flex justify-center items-center gap-4">
                            <Link to='/'>Home</Link>
-                           <Link to='/'>Feature</Link>
                            <Link to='/addblog'>Add Blog</Link>
                          
                         </div>
@@ -72,7 +71,6 @@ const Navbar = () => {
             >
               <div className="p-4 flex flex-col">
     <Link to='/'>Home</Link>
-    <Link to='/'>Feature</Link>
     <Link to='/addblog'>Add Blog</Link>
 </div>
 

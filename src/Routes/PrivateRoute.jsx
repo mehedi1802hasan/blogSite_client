@@ -3,6 +3,8 @@ import { AuthContext } from '../Pages/LoginRegistration/Provider';
 import { Navigate, useLocation } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import LinearProgress from '@mui/material/LinearProgress';
+import Swal from 'sweetalert2'
+
 const PrivateRoute = ({children}) => {
     const {user,loading}=useContext(AuthContext)
     const location =useLocation();
@@ -20,6 +22,13 @@ const PrivateRoute = ({children}) => {
    }
    if(user){
     return children
+   }
+   if(!user){
+    Swal.fire(
+        'Please login first',
+       
+        
+      )
    }
    return <Navigate to='/login' state={{from:location}} replace/>
 };

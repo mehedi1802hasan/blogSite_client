@@ -17,13 +17,13 @@ const AllStories = () => {
     const displayedItems = showAllItems ? allstory : allstory.slice(0, 6);
 
     return (
-        <div className='mt-10 '>
+        <div className='mt-10 mx-2'>
             <h3 className='text-center text-4xl font-bold font-serif mb-8'>All Stories</h3>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 border-0'>
                 {displayedItems.map(item => (
-                    <div key={item.image}>
-                      <Link to={`/story/${item._id}`}>  <img className='h-64 w-full rounded-2xl hover:scale-105 duration-700' src={item.image} alt="" /></Link>
+                   <Link to={`/story/${item._id}`} key={item.image}>
+                       <img className='h-64 w-full rounded-2xl md:hover:scale-105 duration-700' src={item.image} alt="" />
                         <div className='flex justify-between items-center my-6  '>
                             <h3 className='text-yellow-500 font-bold'>{item.value}</h3>
                             <h4><CalendarMonthIcon/>{item.date}</h4>
@@ -33,7 +33,7 @@ const AllStories = () => {
 
                         
   <h4>{item.description.slice(0, 250)}{item.description.length > 50 ? "..." : ""}</h4>
-   </div>
+   </Link>
                 ))}
             </div>
 

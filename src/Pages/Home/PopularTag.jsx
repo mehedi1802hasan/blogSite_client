@@ -16,7 +16,7 @@ const PopularTag = () => {
     },[])
     return (
         <div className='mt-12 p-16'>
-            <h3 className='font-bold text-3xl mb-6'>Popular tags</h3>
+            <h3 className='font-bold text-3xl mb-6 '>Popular tags</h3>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-10 '>
 
             <Link to='/lifestyle' className="h-60 bg-cover bg-center relative hover:scale-105 duration-700" style={{ backgroundImage: 'url("https://i.ibb.co/0rZR4CS/pexels-photo-173301.jpg")' }}>

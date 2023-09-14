@@ -25,7 +25,7 @@ const Footer = () => {
               About Us
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              We are XYZ company, dedicated to providing the best service to our
+              We are BlogLife company, dedicated to providing the best service to our
               customers.
             </Typography>
           </Grid>
@@ -65,7 +65,7 @@ const Footer = () => {
         <Box mt={5}>
           <Typography variant="body2"  align="center">
          
-            © 2023 Blooria. Published with Ghost and Electronthemes
+            © 2023 BlogLife. Published with Ghost and Electronthemes
             {new Date().getFullYear()}
             {"."}
           </Typography>

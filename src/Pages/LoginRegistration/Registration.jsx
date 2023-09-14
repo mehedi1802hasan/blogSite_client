@@ -15,8 +15,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from '../../Shared/Navbar';
 import { AuthContext } from './Provider';
 import { useContext } from 'react';
+import Swal from 'sweetalert2'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
+
 
 const Registration = () => {
   const { loading, user, signUpUser,  singInUser,  logOut}=useContext(AuthContext)
@@ -26,7 +29,9 @@ const Registration = () => {
     password: '',
     imageUrl: '',
   });
-
+  const location=useLocation();
+  const from = location.state?.from?.pathname || '/';
+  const navigate =useNavigate();
   const [formErrors, setFormErrors] = React.useState({
     name: false,
     email: false,
@@ -44,10 +49,27 @@ const Registration = () => {
             signUpUser(email,password)
             .then(result=>{
               const signUped=result.user;
-              console.log(signUped)
+              console.log(signUped);
+              navigate(from, { replace: true });
+
+              Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Registration Successfully complete ',
+                showConfirmButton: false,
+                timer: 1500
+              })
             })
             .catch(error=>{
               console.log(error.message)
+              Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'something wrong .try again ',
+                showConfirmButton: false,
+                timer: 1500
+              })
+             
             })
     // Check for empty fields and display validation errors
     const errors = {};
